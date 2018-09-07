@@ -7,7 +7,8 @@ const YouTube = require('simple-youtube-api');
 const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
 const queue = new Map();
 const client = new Discord.Client();
-   
+
+ 
 
 const prefix = "1"
 client.on('message', async msg => { 
@@ -198,7 +199,7 @@ function play(guild, song) {
 
 const adminprefix = "#vip";
 client.on('message', message => {
-	var devs = ['483092158786568203'];
+	var devs = ['436960038935068672'];
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
     
@@ -236,34 +237,17 @@ ${prefix}vol ⇏ لتغيير درجة الصوت 100 - 0
 ${prefix}stop ⇏ لإخرآج البوت من الروم
 ${prefix}np ⇏ لمعرفة الأغنية المشغلة حآليا
 ${prefix}queue ⇏ لمعرفة قآئمة التشغيل
-
  `)
    message.channel.sendEmbed(embed)
     
    }
    }); 
 
-   
-   client.on('message', message => {
-  if (!message.guild) return;
-
-  if (message.content === '1join') {
-    if (message.member.voiceChannel) {
-      message.member.voiceChannel.join()
-        .then(connection => { 
-          message.reply('لقد دخلت الروم بنجاح !');
-        })
-        .catch(console.log);
-    } else {
-      message.reply('يجب ان تكون في روم صوتي');
-    }
-  }
-});
 
 client.on("message", message => {
   if (message.content === "#viphelp") {
-	  if (message.author.id !== '483092158786568203') return message.reply('**هاذا المر فقط لصاحب السيرفر فقط**')
- if(!message.author.id === '483092158786568203') return;
+	  if (message.author.id !== '436960038935068672') return message.reply('**هاذا الامر فقط لصاحب البوت فقط**')
+ if(!message.author.id === '436960038935068672') return;
   const embed = new Discord.RichEmbed() 
       .setColor("#000000")
       .setDescription(`
@@ -271,7 +255,6 @@ client.on("message", message => {
 #vipsetname ==> لتغيير اسم البوت 
 #vipsetavatar ==> لتغيير صورة البوت
 #vipsetT ==> لتغيير التويتش حك البوت
-
 `)
    message.author.sendEmbed(embed)
     
